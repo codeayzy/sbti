@@ -901,6 +901,59 @@ button {
   color: var(--c-text-muted);
 }
 
+/* --- Poster Modal (WeChat long-press save) --- */
+.poster-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.poster-modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-height: 90vh;
+}
+
+.poster-modal__content img {
+  max-width: 100%;
+  max-height: 72vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  -webkit-touch-callout: default;
+  touch-callout: default;
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+
+.poster-modal__hint {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.poster-modal__content .btn--outline {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+}
+
+.poster-modal__content .btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ============================================
    12. ANIMATIONS
    ============================================ */

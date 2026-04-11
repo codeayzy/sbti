@@ -55,7 +55,7 @@ export function TestProvider({ children }: { children: ReactNode }) {
     setResult(null);
     setBaseQuestions(buildQuestionList());
     setScreen('test');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, []);
 
   const answerQuestion = useCallback((id: string, value: number) => {
@@ -89,7 +89,7 @@ export function TestProvider({ children }: { children: ReactNode }) {
     saveResultToStorage(saved);
     setSavedResult(saved);
     setScreen('result');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, [answers]);
 
   const viewSavedResult = useCallback(() => {
@@ -108,12 +108,12 @@ export function TestProvider({ children }: { children: ReactNode }) {
       secondaryType: null,
     });
     setScreen('result');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, [savedResult]);
 
   const goToScreen = useCallback((s: Screen) => {
     setScreen(s);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, []);
 
   const visibleQuestions = getVisibleQuestions(baseQuestions, answers);

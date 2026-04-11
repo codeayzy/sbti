@@ -298,15 +298,38 @@ function roundRect(
   ctx.closePath();
 }
 
+/** Detect WeChat in-app browser */
+export function isWeChatBrowser(): boolean {
+  return /MicroMessenger/i.test(navigator.userAgent);
+}
+
+/** Convert Blob to data URL string */
+export function blobToDataUrl(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
+
+/**
+ * Share poster image.
+ * - Tries Web Share API with files first (works on most mobile browsers)
+ * - In WeChat: returns data URL for modal display (user long-presses to save)
+ * - Otherwise: triggers download via <a download>
+ *
+ * @returns data URL if modal display is needed, null if share/download succeeded
+ */
 export async function sharePoster(
   blob: Blob,
   fileName: string,
   result: { finalType: { code: string; cn: string } },
   showToast: (msg: string) => void,
-): Promise<void> {
+): Promise<string | null> {
   const file = new File([blob], fileName, { type: 'image/png' });
 
-  // Try Web Share API with files (mobile)
+  // Try Web Share API with files (mobile browsers outside WeChat)
   if (navigator.canShare?.({ files: [file] })) {
     try {
       await navigator.share({
@@ -314,10 +337,15 @@ export async function sharePoster(
         text: `我测出了 ${result.finalType.code}（${result.finalType.cn}），快来测测你的！`,
         files: [file],
       });
-      return;
+      return null;
     } catch (err) {
-      if (err instanceof Error && err.name === 'AbortError') return;
+      if (err instanceof Error && err.name === 'AbortError') return null;
     }
+  }
+
+  // WeChat: <a download> is blocked, show modal for long-press save
+  if (isWeChatBrowser()) {
+    return await blobToDataUrl(blob);
   }
 
   // Fallback: download
@@ -328,6 +356,7 @@ export async function sharePoster(
   a.click();
   URL.revokeObjectURL(url);
   showToast('海报已保存');
+  return null;
 }
 
 // --- Storage ---

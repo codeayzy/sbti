@@ -11,6 +11,7 @@ interface Props {
 export function ShareBar({ result }: Props) {
   const { showToast, startTest, goToScreen } = useTest();
   const [posterLoading, setPosterLoading] = useState(false);
+  const [posterImage, setPosterImage] = useState<string | null>(null);
 
   const handlePoster = async () => {
     if (posterLoading) return;
@@ -19,7 +20,10 @@ export function ShareBar({ result }: Props) {
       const imageSrc = TYPE_IMAGES[result.finalType.code] ?? '';
       const blob = await generatePoster({ ...result, imageSrc });
       const fileName = `SBTI_${result.finalType.code}.png`;
-      await sharePoster(blob, fileName, result, showToast);
+      const dataUrl = await sharePoster(blob, fileName, result, showToast);
+      if (dataUrl) {
+        setPosterImage(dataUrl);
+      }
     } catch {
       showToast('海报生成失败，请稍后再试');
     } finally {
@@ -35,7 +39,7 @@ export function ShareBar({ result }: Props) {
           onClick={handlePoster}
           disabled={posterLoading}
         >
-          {posterLoading ? '生成中...' : '分享海报'}
+          {posterLoading ? '生成中...' : '保存并分享'}
         </button>
         <button
           className="btn btn--outline"
@@ -57,6 +61,21 @@ export function ShareBar({ result }: Props) {
         </button>
       </div>
 
+      {/* Poster modal: long-press to save in WeChat */}
+      {posterImage && (
+        <div className="poster-modal" onClick={() => setPosterImage(null)}>
+          <div className="poster-modal__content" onClick={e => e.stopPropagation()}>
+            <img src={posterImage} alt="SBTI 结果海报" />
+            <p className="poster-modal__hint">长按图片保存到相册</p>
+            <button
+              className="btn btn--outline"
+              onClick={() => setPosterImage(null)}
+            >
+              关闭
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
