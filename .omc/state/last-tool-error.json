@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"D:/Users/YZY/Desktop/sbti\\\" && bun -e '\\nimport { serve } from \\\"bun\\\";\\nconst s = serve({ port: 3000, async fetch(req) {\\n  return new Response(Bun.file(\\\"./src/index.html\\\"), { head...",
+  "error": "Exit code 1\n1 | \n2 | import { serve } from \"bun\";\n3 | const s = serve({ port: 3000, async fetch(req) {\n              ^\nerror: Failed to start server. Is port 3000 in use?\n syscall: \"listen\",\n   errno: 0,\n    code: \"EADDRINUSE\"\n\n      at D:\\Users\\YZY\\Desktop\\sbti\\[eval]:3:11\n      at loadAndEvaluateModule (2:1)\n\nBun v1.3.3 (Windows x64)",
+  "timestamp": "2026-04-10T10:22:40.969Z",
+  "retry_count": 1
+}

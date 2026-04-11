@@ -1,0 +1,289 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775814652517,
+  "projectRoot": "D:\\Users\\YZY\\Desktop\\sbti",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "19",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "bun --hot src/index.ts",
+      "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+      "start": "NODE_ENV=production bun src/index.ts"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 0,
+      "lastAccessed": 1775814652462,
+      "keyFiles": []
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 8,
+      "lastAccessed": 1775814652463,
+      "keyFiles": [
+        "APITester.tsx",
+        "App.tsx",
+        "frontend.tsx",
+        "index.css",
+        "index.html"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src\\utils\\share.ts",
+      "accessCount": 27,
+      "lastAccessed": 1775893356662,
+      "type": "file"
+    },
+    {
+      "path": "src\\index.css",
+      "accessCount": 25,
+      "lastAccessed": 1775893346929,
+      "type": "file"
+    },
+    {
+      "path": "src\\index.ts",
+      "accessCount": 16,
+      "lastAccessed": 1775893342587,
+      "type": "file"
+    },
+    {
+      "path": "src\\utils\\scoring.ts",
+      "accessCount": 10,
+      "lastAccessed": 1775893356678,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Intro\\Intro.tsx",
+      "accessCount": 10,
+      "lastAccessed": 1775893356738,
+      "type": "file"
+    },
+    {
+      "path": "src\\context\\TestContext.tsx",
+      "accessCount": 9,
+      "lastAccessed": 1775893356754,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Result\\ShareBar.tsx",
+      "accessCount": 8,
+      "lastAccessed": 1775893370198,
+      "type": "file"
+    },
+    {
+      "path": "src\\index.html",
+      "accessCount": 7,
+      "lastAccessed": 1775893342678,
+      "type": "file"
+    },
+    {
+      "path": "src\\App.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1775893346866,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\types.ts",
+      "accessCount": 6,
+      "lastAccessed": 1775893440375,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 6,
+      "lastAccessed": 1775893619583,
+      "type": "file"
+    },
+    {
+      "path": "tsconfig.json",
+      "accessCount": 5,
+      "lastAccessed": 1775893342624,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Result\\TypeHero.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1775893370224,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 5,
+      "lastAccessed": 1775893429810,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 5,
+      "lastAccessed": 1775893429882,
+      "type": "directory"
+    },
+    {
+      "path": "src\\data\\dimensions.ts",
+      "accessCount": 5,
+      "lastAccessed": 1775893440393,
+      "type": "file"
+    },
+    {
+      "path": "src\\frontend.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1775893342603,
+      "type": "file"
+    },
+    {
+      "path": "src\\data\\questions.ts",
+      "accessCount": 4,
+      "lastAccessed": 1775893346876,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Result\\Result.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1775893365159,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 3,
+      "lastAccessed": 1775886017341,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components\\Test\\Test.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1775893356694,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Test\\QuestionCard.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1775893365072,
+      "type": "file"
+    },
+    {
+      "path": ".impeccable.md",
+      "accessCount": 2,
+      "lastAccessed": 1775885367947,
+      "type": "file"
+    },
+    {
+      "path": "public",
+      "accessCount": 2,
+      "lastAccessed": 1775885375912,
+      "type": "directory"
+    },
+    {
+      "path": "src\\components\\common\\Toast.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775893365177,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Result\\RadarChart.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775893370329,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Result\\DimBreakdown.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775893370375,
+      "type": "file"
+    },
+    {
+      "path": "bun-env.d.ts",
+      "accessCount": 1,
+      "lastAccessed": 1775885367843,
+      "type": "file"
+    },
+    {
+      "path": "bunfig.toml",
+      "accessCount": 1,
+      "lastAccessed": 1775885367976,
+      "type": "file"
+    },
+    {
+      "path": "prompt.md",
+      "accessCount": 1,
+      "lastAccessed": 1775885368002,
+      "type": "file"
+    },
+    {
+      "path": "app.js",
+      "accessCount": 1,
+      "lastAccessed": 1775885375654,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1775885435880,
+      "type": "file"
+    },
+    {
+      "path": "C:\\Users\\YZY\\.claude\\image-cache\\f9c1d530-2fc3-4eb0-a5ce-7b44189a6da4\\1.png",
+      "accessCount": 1,
+      "lastAccessed": 1775885923204,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
