@@ -1,5 +1,6 @@
 import { useTest } from '../../context/TestContext';
 import { QuestionCard } from './QuestionCard';
+import { QuestionNav } from './QuestionNav';
 import { shareSite } from '../../utils/share';
 
 export function Test() {
@@ -30,17 +31,22 @@ export function Test() {
         </button>
       </header>
 
-      <div className="test__list">
-        {visibleQuestions.map((q, i) => (
-          <QuestionCard key={q.id} question={q} index={i} />
-        ))}
+      <div className="test__body">
+        <QuestionNav />
+        <div className="test__list">
+          {visibleQuestions.map((q, i) => (
+            <div id={`q-${i}`} key={q.id}>
+              <QuestionCard question={q} index={i} />
+            </div>
+          ))}
+        </div>
       </div>
 
       <footer className="test__footer">
         <p className="test__hint">
           {isComplete
             ? '都做完了。现在可以把你的电子魂魄交给结果页审判。'
-            : '全选完才会放行。世界已经够乱了，起码把题做完整。'}
+            : '全选完才会放行。世界已经够乱的，起码把题做完整。'}
         </p>
         <button
           className="btn btn--primary"

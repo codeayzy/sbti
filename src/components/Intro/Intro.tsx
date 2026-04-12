@@ -30,7 +30,7 @@ export function Intro() {
       </div>
 
       <button className="btn btn--primary btn--pulse" onClick={startTest}>
-        开始发疯
+        开始
         <span className="btn__icon">→</span>
       </button>
 

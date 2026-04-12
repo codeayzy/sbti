@@ -39,7 +39,7 @@ export function ShareBar({ result }: Props) {
           onClick={handlePoster}
           disabled={posterLoading}
         >
-          {posterLoading ? '生成中...' : '保存并分享'}
+          {posterLoading ? '生成中...' : '分享海报'}
         </button>
         <button
           className="btn btn--outline"
